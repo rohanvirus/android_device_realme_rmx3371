@@ -15,7 +15,7 @@ rm -rf hardware/oplus && git clone https://github.com/RealmeGTNeo3T-Devs/android
 # Brightness fix
 cd frameworks/base
 wget https://github.com/DerpFest-AOSP/frameworks_base/commit/0f70b4190d69b48e510a67bdc3bdf6a83ac009eb.patch
-git apply *.patch
+patch -p1 <0f70b4190d69b48e510a67bdc3bdf6a83ac009eb.patch
 cd ../..
 
 echo 'delete vendorsetup.sh from device tree once this is done'
