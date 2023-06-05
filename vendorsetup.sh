@@ -10,6 +10,12 @@ rm -rf vendor/realme/spartan && git clone https://github.com/rohanvirus/propriet
 
 # Hardware
 echo 'Cloning hardware realme [3/3]'
-rm -rf hardware/oplus && git clone https://github.com/RealmeGTNeo3T-Devs/android_hardware_oplus -b test hardware/oplus
+rm -rf hardware/oplus && git clone https://github.com/RealmeGTNeo3T-Devs/android_hardware_oplus -b 13 hardware/oplus
+
+# Brightness fix
+cd frameworks/base
+wget https://github.com/DerpFest-AOSP/frameworks_base/commit/0f70b4190d69b48e510a67bdc3bdf6a83ac009eb.patch
+git apply *.patch
+cd ../..
 
 echo 'delete vendorsetup.sh from device tree once this is done'
