@@ -11,17 +11,26 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from spartan device
 $(call inherit-product, device/realme/spartan/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common BananaDroid stuff.
+$(call inherit-product, vendor/banana/config/common.mk)
 
 
 
-PRODUCT_NAME := lineage_spartan
+PRODUCT_NAME := banana_spartan
 PRODUCT_DEVICE := spartan
 PRODUCT_MANUFACTURER := realme
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX3371
 
+# BananaDroid
+WITH_GAPPS := true
+BUILD_CORE_GAPPS := true
+BANANA_MAINTAINER := rohanvirus
+TARGET_ENABLE_BLUR := true
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_EXCLUDE_MATLOG := true
+
+TARGET_SUPPORTS_QUICK_TAP := true
 PRODUCT_SYSTEM_NAME := RMX3371
 PRODUCT_SYSTEM_DEVICE := RE54E4L1
 
